@@ -75,11 +75,16 @@ let appendElement = (node) => {
 
 // konwertuje input na liczby
 let convertInput = (input1, input2) => {
+    
+    //przekształcamy wartosci na liczby
+    let num1 = Number(input1);
+    let num2 = Number(input2);
+
     // sprawdzamy czy dane się zgadzają, jeżeli nie to zwracamy zerowe liczby oraz informację że się nie zgadzają
-    if (isNaN(input1) || isNaN(input2)) { return [0, 0, false]; };
+    if (isNaN(num1) || isNaN(num2)) { return [0, 0, false]; };
 
     // zwracamy tabele z wartosciami przekształonymi na liczby oraz informacje ze dane się zgadzają
-    return [Number(input1), Number(input2), true];
+    return [num1, num2, true];
 };
 
 // aktualizuje wynik
