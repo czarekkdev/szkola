@@ -1,0 +1,1 @@
+Macie tu wszystkie lekcje od 12/04/2026 w góre wszystko staram się ladnie dokumentować, miłej nauki :)
