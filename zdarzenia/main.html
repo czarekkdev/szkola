@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+</body>
+<script>
+    let btn = document.body.appendChild(document.createElement("button"));
+    let size = document.body.appendChild(document.createElement("p"));
+
+    size.textContent = `${window.innerWidth}x${window.innerHeight}`;
+
+    btn.style = "background-color: white;"
+
+    btn.addEventListener("mouseenter", () => {
+        btn.style = "background-color: red;";
+    });
+
+    btn.addEventListener("mouseleave", () => {
+        btn.style = "background-color: white;";
+    });
+
+    btn.addEventListener("dblclick", () => {
+        alert("Double clicked!");
+    });
+
+    btn.addEventListener("focusin", () => {
+        btn.style = "background-color: orange;";
+    });
+
+    btn.addEventListener("focusout", () => {
+        btn.style = "background-color: white;";
+    });
+
+    window.addEventListener("resize", () => {
+        size.textContent = `${window.innerWidth}x${window.innerHeight}`;
+    });
+
+    document.addEventListener("keypress", (key) => {
+        console.log(`key typed: ${key.key}`);
+    });
+
+    document.addEventListener("DOMContentLoaded", () => {
+        alert("Witaj na stronie!");
+    });
+
+    btn.textContent = "double click me";
+</script>
+</html>

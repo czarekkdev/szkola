@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+</body>
+<script>
+    let text = "informatyka";
+
+    // metoda charAt
+    // for (let i = 0; i < text.length; i++) {
+    //     console.log(text.charAt(i));
+    // };
+
+    // metoda na konwersje na tabele
+    text.split("").forEach(char => {
+        console.log(char);
+    });
+
+    // moja metoda na tworzenie elementów
+    let makeElement = (tagName) => {
+        return document.body.appendChild(document.createElement(tagName));
+    };
+
+
+    // tworzenie elementow
+    let imie = makeElement("input");
+
+    // next line
+    makeElement("br");
+
+    let submit = makeElement("button");
+    let malymi = makeElement("p");
+    let duzymi = makeElement("p");
+    
+
+    // ustawianie parametrow elementow
+    malymi.textContent = "malymi: ";
+    duzymi.textContent = "DUZYMI: ";
+    submit.textContent = "wyślij"
+    imie.placeholder = "imie";
+
+    // nasluchiwacz zdarzeń
+    submit.addEventListener("click", () => {
+        malymi.textContent = `malymi: ${imie.value.toLowerCase()}`;
+        duzymi.textContent = `DUZYMI: ${imie.value.toUpperCase()}`;
+    });
+
+</script>
+</html>
