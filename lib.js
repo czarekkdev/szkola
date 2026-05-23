@@ -1,4 +1,5 @@
-let makeElement = (tagName: keyof HTMLElementTagNameMap) => {
+/** @param {keyof HTMLElementTagNameMap} tagName */
+let makeElement = (tagName) => {
     return document.body.appendChild(document.createElement(tagName));
 };
 
