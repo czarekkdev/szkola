@@ -1,8 +1,8 @@
 /** @param {keyof HTMLElementTagNameMap} tagName */
-let makeElement = (tagName) => {
+export let makeElement = (tagName) => {
     return document.body.appendChild(document.createElement(tagName));
 };
 
-let br = () => {
+export let br = () => {
     return makeElement("br");
 }
