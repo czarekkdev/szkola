@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+
+</body>
+<script>
+
+    // wyswietla element na stronie
+    let appendElement = (node) => {
+        return document.body.appendChild(node); // wyswietl element na stronie
+    };
+
+    // @ts-check
+
+    /** @param {keyof HTMLElementTagNameMap} tagName */
+    let makeElement = (tagName) => {
+        return document.body.appendChild(document.createElement(tagName));
+    };
+
+    let br = () => {
+        return makeElement("br");
+    }
+
+    let inp1 = document.createElement("input");
+    inp1.placeholder = "tekst";
+
+    appendElement(inp1);
+    br();
+
+    let len_disp = makeElement("p");
+    len_disp.innerText = "Długość: ";
+
+    br();
+
+    let dm = makeElement("p");
+    dm.innerText = "Długość tekstowa: "
+
+    br();
+
+    let btn = makeElement("button");
+    btn.innerText = "Wykonaj";
+
+    let first_char = makeElement("p")
+    first_char.innerText = "Pierwszy znak: ";
+
+    let last_char = makeElement("p")
+    last_char.innerText = "Ostatni znak: ";
+
+    let third_char = makeElement("p")
+    third_char.innerText = "Trzeci znak: ";
+
+    let przed1_char = makeElement("p")
+    przed1_char.innerText = "Przedział (4 - 7): ";
+
+    let przed2_char = makeElement("p")
+    przed2_char.innerText = "Przedział (1 - 4): ";
+
+    let przed3_char = makeElement("p")
+    przed3_char.innerText = "Przedział (ostatnie 3 znaki): ";
+
+    let przed4_char = makeElement("p")
+    przed4_char.innerText = "Przedział (4 - max): ";
+
+    btn.addEventListener("click", () => {
+        len_disp.innerText = `Długość: ${inp1.value.length}`;
+
+        let tekst = ""
+        if (inp1.value.length > 10) { tekst = "Długi napis" } else { tekst = "Krótki napis" };
+
+        dm.innerText = `Długość tekstowa: ${tekst}`;
+
+        first_char.innerText = `Pierwszy znak: ${inp1.value.charAt(0)}`;
+        third_char.innerText = `Trzeci znak: ${inp1.value.charAt(2)}`;
+        last_char.innerText = `Ostatni znak: ${inp1.value.charAt(inp1.value.length - 1)}`;
+        przed1_char.innerText = `Przedział (4 - 7): ${inp1.value.slice(3, 6)}`;
+        przed2_char.innerText = `Przedział (1 - 4): ${inp1.value.slice(0, 3)}`;
+        przed3_char.innerText = `Przedział (ostatnie 3 znaki): ${inp1.value.slice(inp1.value.length - 3, inp1.value.length)}`;
+        przed4_char.innerText = `Przedział (4 - max): ${inp1.value.slice(3, inp1.value.length)}`;
+        
+    });
+</script>
+
+</html>
